@@ -87,18 +87,4 @@ public class Reserva {
     public void setSalao(Salao salao) {
         this.salao = salao;
     }
-
-    public String detalhes() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(this.toString());
-        if (salao != null) {
-            sb.append("\n   ").append(salao);
-            if (salao.getOrganizador() != null) {
-                sb.append("\n   ").append(salao.getOrganizador());
-            }
-        } else {
-            sb.append("\n   Salão: não atribuído");
-        }
-        return sb.toString();
-    }
 }
