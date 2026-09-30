@@ -70,26 +70,4 @@ public class Salao {
     public void setReservas(List<Reserva> reservas) {
         this.reservas = reservas;
     }
-
-    public boolean associarOrganizador(Organizador org) {
-        if (this.organizador != null || org.getSalao() != null) {
-            return false;
-        }
-        this.organizador = org;
-        org.setSalao(this);
-        return true;
-    }
-
-    public boolean temConflito(Reserva nova) {
-        for (Reserva r : reservas) {
-            if (r.getData().equals(nova.getData()) && r.getHorario().equalsIgnoreCase(nova.getHorario())) {
-                return true;
-            }
-        }
-        return false;
-    }
-    
-    public void removerReserva(Reserva reserva) {
-        reservas.remove(reserva);
-    }
 }
